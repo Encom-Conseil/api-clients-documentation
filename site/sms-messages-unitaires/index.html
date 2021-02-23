@@ -51,6 +51,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">API SMS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
@@ -76,6 +81,26 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemple-de-reponse">Exemple de réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obtenir-les-informations-relatives-un-message-envoye">Obtenir les informations relatives un message envoyé</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres_1">Paramètres :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete_1">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl_1">Curl :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php_1">PHP :</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python_1">Python :</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-de-reponse_1">Exemple de réponse</a>
     </li>
         </ul>
     </li>
@@ -148,7 +173,6 @@
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=06********&amp;message=Hello%20World!&amp;type=t&amp;=' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php">PHP</h5>
 <pre><code>&lt;?php
 
@@ -179,7 +203,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python">Python</h5>
 <pre><code>import http.client
 
@@ -196,11 +219,83 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse">Exemple de réponse</h4>
 <p>Lorsque le message est planifié avec succès, l'API retourne un code "201 Created" ainsi que l'id du message :</p>
 <pre><code>{
   &quot;store&quot;: 20
+}
+</code></pre>
+<hr />
+<h3 id="obtenir-les-informations-relatives-un-message-envoye">Obtenir les informations relatives un message envoyé</h3>
+<p><strong>GET /api/v1/sms/singleMessage</strong></p>
+<h4 id="parametres_1">Paramètres :</h4>
+<ul>
+<li>customerAccount * : compte client Encom</li>
+<li>singleSmsMessageId</li>
+</ul>
+<h4 id="exemples-de-requete_1">Exemples de requête</h4>
+<h5 id="curl_1">Curl :</h5>
+<pre><code>curl --request GET \
+  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;singleSmsMessageId=1' \
+  --header 'authorization: Bearer {token} '
+</code></pre>
+<h5 id="php_1">PHP :</h5>
+<pre><code>&lt;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;singleSmsMessageId=1&quot;,
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; &quot;&quot;,
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 30,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; &quot;GET&quot;,
+  CURLOPT_POSTFIELDS =&gt; &quot;&quot;,
+  CURLOPT_HTTPHEADER =&gt; array(
+    &quot;authorization: Bearer {token} &quot;
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo &quot;cURL Error #:&quot; . $err;
+} else {
+  echo $response;
+}
+</code></pre>
+<h3 id="python_1">Python :</h3>
+<pre><code>import http.client
+
+conn = http.client.HTTPSConnection(&quot;telecom0525-clients.bluerocktel.net&quot;)
+
+payload = &quot;&quot;
+
+headers = { 'authorization': &quot;Bearer {token} &quot; }
+
+conn.request(&quot;GET&quot;, &quot;/api/v1/sms/singleMessage?customerAccount=CL3578&amp;singleSmsMessageId=1&quot;, payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+<h4 id="exemple-de-reponse_1">Exemple de réponse</h4>
+<p>Lorsque le message est trouvé, l'API retourne un code "200 OK" ainsi que les informations du message :</p>
+<pre><code>{
+  &quot;id&quot;: 1,
+  &quot;number&quot;: &quot;00336********&quot;,
+  &quot;idSend&quot;: &quot;Campaign XYZ&quot;,
+  &quot;message&quot;: &quot;Hello World&quot;,
+  &quot;type&quot;: null,
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;details&quot;: &quot;SENDING CONFIRMED&quot;,
+  &quot;code&quot;: &quot;000&quot;
 }
 </code></pre>
               

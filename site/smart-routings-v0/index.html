@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Cyrille Georgel < cyrille.georgel@encom-conseil.fr >">
+  <link rel="canonical" href="https://encom-conseil.github.io/smart-routings-v0/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Routages intelligents - API Clients Encom</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Routages intelligents";
+    var mkdocs_page_input_path = "smart-routings-v0.md";
+    var mkdocs_page_url = "/smart-routings-v0/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> API Clients Encom</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Routages intelligents</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-la-file-dappels-de-destination-en-fonction-du-numero-de-lappelant">Déterminer la file d'appels de destination en fonction du numéro de l'appelant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl">Curl</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-si-lappelant-est-vip-en-fonction-de-son-numero">Déterminer si l'appelant est VIP en fonction de son numéro</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse_1">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-si-lappelant-est-sous-contrat-dastreinte-en-fonction-de-son-numero">Déterminer si l'appelant est sous contrat d'astreinte en fonction de son numéro</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse_2">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-la-file-dappels-de-destination-en-fonction-du-code-saisi-par-lappelant">Déterminer la file d'appels de destination en fonction du code saisi par l'appelant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse_3">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-si-lappelant-est-vip-en-fonction-du-code-saisi">Déterminer si l'appelant est VIP en fonction du code saisi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse_4">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-si-lappelant-est-sous-contrat-dastreinte-en-fonction-du-code-saisi">Déterminer si l'appelant est sous contrat d'astreinte en fonction du code saisi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reponse_5">Réponse</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API SMS</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sms-messages-unitaires/">Messages unitaires</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sms-messages-listes/">Messages vers une liste de diffusion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sms-listes-de-diffusion/">Gestion des listes de diffusion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sms-destinataires/">Gestion des destinataires</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sms-listener/">Configuration de listener</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">API Clients Encom</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Routages &raquo;</li>
+        
+      
+    
+    <li>Routages intelligents</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="routages-intelligents">Routages intelligents</h2>
+<hr />
+<p>Il est possible d'interroger l'Api Clients Encom, soit par rapport au numéro de l'appelant, soit par rapport à un code que celui-ci est invité à saisir.</p>
+<p>En principe, votre call flow tentera d'abord de reconnaître l'appelant par son numéro, et ne l'invitera à saisir son code d'identification que s'il n'est pas déjà reconnu.</p>
+<p>Une fois l'appelant identifié par l'une ou l'autre des méthodes, l'Api Clients Encom vous indiquera vers quelle file d'appels le diriger, mais aussi s'il est VIP et/ou sous contrat d'astreinte.</p>
+<p>Note importante : le paramètre "customerAccount", qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.</p>
+<h3 id="determiner-la-file-dappels-de-destination-en-fonction-du-numero-de-lappelant">Déterminer la file d'appels de destination en fonction du numéro de l'appelant</h3>
+<p><strong><em>*</em>GET /api/{customerAccount}/customer/number/{number}</strong></p>
+<h4 id="exemples-de-requete">Exemples de requête</h4>
+<h5 id="curl">Curl</h5>
+<pre><code>curl --request GET \
+  --url https://clients.encom-conseil.fr/api/{customerAccount}/customer/number/{number} \
+  --header 'Authorization: Bearer {token}'
+</code></pre>
+<h4 id="reponse">Réponse</h4>
+<p>Si le numéro de l'appelant est trouvé, la file d'appels correspondante est retournée sous forme de chaîne, par exemple : 900</p>
+<p>S'il n'est pas trouvé, un message "not found" est envoyé au format JSON avec un code 404.</p>
+<h3 id="determiner-si-lappelant-est-vip-en-fonction-de-son-numero">Déterminer si l'appelant est VIP en fonction de son numéro</h3>
+<p><strong>GET /api/{customerAccount}/customer/isVipFromNumber/{number}</strong></p>
+<h4 id="reponse_1">Réponse</h4>
+<p>Si le numéro de l'appelant est trouvé, un message true (s'il est VIP) ou false (s'il ne l'est pas) est renvoyé au format JSON avec un code 200.</p>
+<p>S'il n'est pas trouvé, un message "not found" est renvoyé au format JSON avec un code 404.</p>
+<h3 id="determiner-si-lappelant-est-sous-contrat-dastreinte-en-fonction-de-son-numero">Déterminer si l'appelant est sous contrat d'astreinte en fonction de son numéro</h3>
+<p><strong>GET /api/{customerAccount}/customer/hasOnCallDutyContractFromNumber/{number}</strong></p>
+<h4 id="reponse_2">Réponse</h4>
+<p>Si le numéro de l'appelant est trouvé, un message true (s'il est sous contrat d'astreinte) ou false (s'il ne l'est pas) est renvoyé au format JSON avec un code 200.</p>
+<p>S'il n'est pas trouvé, un message "not found" est renvoyé au format JSON avec un code 404.</p>
+<h3 id="determiner-la-file-dappels-de-destination-en-fonction-du-code-saisi-par-lappelant">Déterminer la file d'appels de destination en fonction du code saisi par l'appelant</h3>
+<p><strong>GET /api/{customerAccount}/customer/code/{code}</strong></p>
+<h4 id="reponse_3">Réponse</h4>
+<p>Si le code saisi par l'appelant est reconnu, la file d'appels correspondante est retournée sous forme de chaîne, par exemple : 900</p>
+<p>S'il n'est pas reconnu, un message "not found" est envoyé au format JSON avec un code 404.</p>
+<h3 id="determiner-si-lappelant-est-vip-en-fonction-du-code-saisi">Déterminer si l'appelant est VIP en fonction du code saisi</h3>
+<p><strong>GET /api/{cutomerAccount}/customer/isVipFromCode/{code}</strong></p>
+<h4 id="reponse_4">Réponse</h4>
+<p>Si le code saisi par l'appelant est reconnu, un message true (s'il est VIP) ou false (s'il ne l'est pas) est renvoyé au format JSON avec un code 200.</p>
+<p>S'il n'est pas reconnu, un message "not found" est renvoyé au format JSON avec un code 404.</p>
+<h3 id="determiner-si-lappelant-est-sous-contrat-dastreinte-en-fonction-du-code-saisi">Déterminer si l'appelant est sous contrat d'astreinte en fonction du code saisi</h3>
+<p><strong>GET /api/{customerAccount}/customer/hasOnCallDutyContractFromCode/{code}</strong></p>
+<h4 id="reponse_5">Réponse</h4>
+<p>Si le code saisi par l'appelant est reconnu, un message true (s'il est sous contrat d'astreinte) ou false (s'il ne l'est pas) est renvoyé au format JSON avec un code 200.</p>
+<p>S'il n'est pas reconnu, un message "not found" est renvoyé au format JSON avec un code 404.</p>
+              
+            </div>
+          </div>
+          
+<footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="../encom-api-sms/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+        
+        
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        
+    </div>
+    
+
+    <hr/>
+
+    <div role="contentinfo">
+        <!-- Copyright etc -->
+        
+    </div>
+
+    Built with Passion at <a href="https://encom-conseil.fr?utm_source=api-clients-documentation" target="_blank">Encom</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../encom-api-sms/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

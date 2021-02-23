@@ -51,6 +51,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">API SMS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
@@ -155,7 +160,6 @@
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipients?customerAccount=CL3578&amp;smsRecipientListId=1' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -186,7 +190,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python">Python :</h5>
 <pre><code>import http.client
 
@@ -203,7 +206,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse">Exemple de réponse</h4>
 <p>L'API retourne un tableau contenant la liste des numéros, avec le nom correspondant s'il est disponible, ou <em>null</em> s'il ne l'est pas :</p>
 <pre><code>{
@@ -211,7 +213,6 @@ print(data.decode(&quot;utf-8&quot;))
   &quot;00336********&quot;: &quot;Jack&quot;
 }
 </code></pre>
-
 <hr />
 <h3 id="ajouter-un-destinataire-a-une-liste-de-diffusion">Ajouter un destinataire à une liste de diffusion</h3>
 <p><strong>POST /api/v1/sms/recipients</strong></p>
@@ -228,7 +229,6 @@ print(data.decode(&quot;utf-8&quot;))
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipients?customerAccount=CL3578&amp;smsRecipientListId=1&amp;number=0603790932' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php_1">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -259,7 +259,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python_1">Python :</h5>
 <pre><code>import http.client
 
@@ -276,7 +275,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse_1">Exemple de réponse</h4>
 <p>Si le destinataire, identifié par son numéro de téléphone mobile, n'existe pas dans votre compte, il est créé puis attaché à la liste passée en paramètre.</p>
 <p>Si le destinataire, identifié par son numéro de téléphone mobile, existe déjà dans votre compte, il n'est pas dupliqué mais attaché à liste passée en paramètre. Un même destinataire peut ainsi exister dans plusieurs listes de diffusion.</p>

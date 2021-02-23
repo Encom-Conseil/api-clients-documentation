@@ -51,6 +51,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">API SMS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
@@ -152,7 +157,6 @@
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&amp;message=Hello%20World!&amp;type=t&amp;smsRecipientListId=1' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php">PHP</h5>
 <pre><code>&lt;?php
 
@@ -183,7 +187,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python">Python</h5>
 <pre><code>import http.client
 
@@ -200,13 +203,13 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse">Exemple de réponse</h4>
 <p>Lorsque les messages sont planifiés avec succès, l'API retourne un code "201 Created" ainsi que les ids des messages :</p>
 <pre><code>{
   &quot;store&quot;: &quot;22,23&quot;
 }
 </code></pre>
+<p>Vous pouvez ensuite obtenir le statut de chaque message envoyé en utilisant le  <a href="../sms-messages-unitaires/">endpoint GET /api/v1/sms/singleMessage</a></p>
               
             </div>
           </div>

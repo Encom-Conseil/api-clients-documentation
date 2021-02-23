@@ -4,6 +4,8 @@ site_description: Documentation de l'API Clients Encom
 site_author: Cyrille Georgel < cyrille.georgel@encom-conseil.fr >
 nav:
   - Home: index.md
+  - API Routages:
+    - 'Routages intelligents': smart-routings-v0.md
   - API SMS:
       - 'Introduction': encom-api-sms.md
       - 'Messages unitaires': sms-messages-unitaires.md
