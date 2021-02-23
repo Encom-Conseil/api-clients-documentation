@@ -51,6 +51,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">API SMS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
@@ -190,7 +195,6 @@
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -221,7 +225,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python">Python :</h5>
 <pre><code>import http.client
 
@@ -238,7 +241,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse">Exemple de réponse :</h4>
 <pre><code>[
   {
@@ -264,7 +266,6 @@ print(data.decode(&quot;utf-8&quot;))
   }
 ]
 </code></pre>
-
 <hr />
 <h3 id="creer-une-nouvelle-liste-de-diffusion">Créer une nouvelle liste de diffusion</h3>
 <p><strong>POST /api/v1/sms/recipientLists</strong></p>
@@ -279,7 +280,6 @@ print(data.decode(&quot;utf-8&quot;))
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php_1">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -310,7 +310,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python_1">Python :</h5>
 <pre><code>import http.client
 
@@ -327,7 +326,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse_1">Exemple de réponse</h4>
 <p>Lorsque la liste est créée avec succès, l'API retourne un code "201 Created" ainsi qu'un tableau contenant l'id et le nom de la nouvelle liste :</p>
 <pre><code>{
@@ -335,7 +333,6 @@ print(data.decode(&quot;utf-8&quot;))
   &quot;name&quot;: &quot;Test Cyrille&quot;
 }
 </code></pre>
-
 <hr />
 <h3 id="renommer-une-liste-de-diffusion">Renommer une liste de diffusion</h3>
 <p><strong>PUT /api/v1/sms/recipientLists</strong></p>
@@ -351,7 +348,6 @@ print(data.decode(&quot;utf-8&quot;))
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;name=Test%20%2B%2B%2B&amp;id=7' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php_2">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -382,7 +378,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python_2">Python :</h5>
 <pre><code>import http.client
 
@@ -399,7 +394,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse_2">Exemple de réponse</h4>
 <p>Lorsque la liste est créée avec succès, l'API retourne un code "200 ok" ainsi qu'un tableau contenant l'id et le nouveau nom de la liste :</p>
 <pre><code>{
@@ -407,7 +401,6 @@ print(data.decode(&quot;utf-8&quot;))
   &quot;name&quot;: &quot;Nouveau nom de la liste&quot;
 }
 </code></pre>
-
 <hr />
 <h3 id="supprimer-une-liste-de-diffusion">Supprimer une liste de diffusion</h3>
 <p><strong>DELETE /api/v1/sms/recipientLists</strong></p>
@@ -422,7 +415,6 @@ print(data.decode(&quot;utf-8&quot;))
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&amp;id=7' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php_3">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -453,7 +445,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python_3">Python :</h5>
 <pre><code>import http.client
 
@@ -470,14 +461,12 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse_3">Exemple de réponse</h4>
 <p>Lorsque la liste est supprimée, l'API retourne un code "200 OK" ainsi que le message "deleted" :</p>
 <pre><code>{
   &quot;response&quot;: &quot;deleted&quot;
 }
 </code></pre>
-
 <p>Lorsque la liste n'existe pas, l'API retourne un code "404 Not found"  ainsi que le message "not found" :</p>
 <pre><code>{
   &quot;response&quot;: &quot;not found&quot;

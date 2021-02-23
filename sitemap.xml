@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://encom-conseil.github.io/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://encom-conseil.github.io/smart-routings-v0/</loc>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/encom-api-sms/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/sms-messages-unitaires/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/sms-messages-listes/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/sms-listes-de-diffusion/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/sms-destinataires/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://encom-conseil.github.io/sms-listener/</loc>
-     <lastmod>2020-07-14</lastmod>
+     <lastmod>2021-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

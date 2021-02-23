@@ -51,6 +51,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">API Routages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">API SMS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
@@ -168,7 +173,6 @@
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;recipient=06********&amp;message=Hello%20World!&amp;type=t&amp;=' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php">PHP</h5>
 <pre><code>&lt;?php
 
@@ -199,7 +203,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h5 id="python">Python</h5>
 <pre><code>import http.client
 
@@ -216,14 +219,12 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse">Exemple de réponse</h4>
 <p>Lorsque le message est planifié avec succès, l'API retourne un code "201 Created" ainsi que l'id du message :</p>
 <pre><code>{
   &quot;store&quot;: 20
 }
 </code></pre>
-
 <hr />
 <h3 id="obtenir-les-informations-relatives-un-message-envoye">Obtenir les informations relatives un message envoyé</h3>
 <p><strong>GET /api/v1/sms/singleMessage</strong></p>
@@ -238,7 +239,6 @@ print(data.decode(&quot;utf-8&quot;))
   --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&amp;singleSmsMessageId=1' \
   --header 'authorization: Bearer {token} '
 </code></pre>
-
 <h5 id="php_1">PHP :</h5>
 <pre><code>&lt;?php
 
@@ -269,7 +269,6 @@ if ($err) {
   echo $response;
 }
 </code></pre>
-
 <h3 id="python_1">Python :</h3>
 <pre><code>import http.client
 
@@ -286,7 +285,6 @@ data = res.read()
 
 print(data.decode(&quot;utf-8&quot;))
 </code></pre>
-
 <h4 id="exemple-de-reponse_1">Exemple de réponse</h4>
 <p>Lorsque le message est trouvé, l'API retourne un code "200 OK" ainsi que les informations du message :</p>
 <pre><code>{
