@@ -4,15 +4,15 @@ site_description: Documentation de l'API Clients Encom
 site_author: Cyrille Georgel < cyrille.georgel@encom-conseil.fr >
 nav:
   - Home: index.md
-  - API Routages:
+  - API ROUTAGES:
     - 'Routages intelligents': smart-routings-v0.md
   - API SMS:
-      - 'Introduction': encom-api-sms.md
-      - 'Messages unitaires': sms-messages-unitaires.md
-      - 'Messages vers une liste de diffusion': sms-messages-listes.md
-      - 'Gestion des listes de diffusion': sms-listes-de-diffusion.md
-      - 'Gestion des destinataires': sms-destinataires.md
-      - 'Configuration de listener': sms-listener.md
+    - 'Introduction': encom-api-sms.md
+    - 'Messages unitaires': sms-messages-unitaires.md
+    - 'Messages vers une liste de diffusion': sms-messages-listes.md
+    - 'Gestion des listes de diffusion': sms-listes-de-diffusion.md
+    - 'Gestion des destinataires': sms-destinataires.md
+    - 'Configuration de listener': sms-listener.md
 theme:
   name: readthedocs
   custom_dir: override
