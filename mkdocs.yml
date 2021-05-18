@@ -5,7 +5,8 @@ site_author: Cyrille Georgel < cyrille.georgel@encom-conseil.fr >
 nav:
   - Home: index.md
   - API ROUTAGES:
-    - 'Routages intelligents': smart-routings-v0.md
+    - 'Routages intelligents (legacy)': smart-routings-v0.md
+    - 'Routages intelligents V1 : routages': smart-routings-v1.md
   - API SMS:
     - 'Introduction': encom-api-sms.md
     - 'Messages unitaires': sms-messages-unitaires.md
