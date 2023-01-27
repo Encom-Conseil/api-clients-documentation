@@ -31,7 +31,7 @@ Lorsque la liste de diffusion contient le noms des destinataires, il est possibl
 
 ```
 curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&message=Hello%20World!&type=t&smsRecipientListId=1' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&message=Hello%20World!&type=t&smsRecipientListId=1' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -43,7 +43,7 @@ curl --request POST \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&message=Hello%20World!&type=t&smsRecipientListId=1",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&message=Hello%20World!&type=t&smsRecipientListId=1",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -73,7 +73,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 

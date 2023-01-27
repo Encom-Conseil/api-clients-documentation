@@ -27,7 +27,7 @@ Attention : pour tout envoi de message à caractère marketing (type 'm'), la me
 
 ```
 curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -39,7 +39,7 @@ curl --request POST \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&recipient=06********&message=Hello%20World!&type=t&=",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -69,7 +69,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 
@@ -110,7 +110,7 @@ Lorsque le message est planifié avec succès, l'API retourne un code "201 Creat
 
 ```
 curl --request GET \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&singleSmsMessageId=1' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&singleSmsMessageId=1' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -122,7 +122,7 @@ curl --request GET \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&singleSmsMessageId=1",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/singleMessage?customerAccount=CL3578&singleSmsMessageId=1",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -152,7 +152,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 

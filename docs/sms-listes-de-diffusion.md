@@ -16,7 +16,7 @@
 
 ```
 curl --request GET \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -28,7 +28,7 @@ curl --request GET \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -58,7 +58,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 
@@ -116,7 +116,7 @@ print(data.decode("utf-8"))
 
 ```
 curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -128,7 +128,7 @@ curl --request POST \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -158,7 +158,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 
@@ -201,7 +201,7 @@ Lorsque la liste est créée avec succès, l'API retourne un code "201 Created" 
 
 ```
 curl --request PUT \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7' \
   --header 'authorization: Bearer {token} '
 ```
 ##### PHP :
@@ -212,7 +212,7 @@ curl --request PUT \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&name=Test%20%2B%2B%2B&id=7",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -242,7 +242,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 
@@ -284,7 +284,7 @@ Lorsque la liste est créée avec succès, l'API retourne un code "200 ok" ainsi
 
 ```
 curl --request DELETE \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&id=7' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&id=7' \
   --header 'authorization: Bearer {token} '
 ```
 
@@ -296,7 +296,7 @@ curl --request DELETE \
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://telecom0525-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&id=7",
+  CURLOPT_URL => "https://telecom0585-clients.bluerocktel.net/api/v1/sms/recipientLists?customerAccount=CL3578&id=7",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -326,7 +326,7 @@ if ($err) {
 ```
 import http.client
 
-conn = http.client.HTTPSConnection("telecom0525-clients.bluerocktel.net")
+conn = http.client.HTTPSConnection("telecom0585-clients.bluerocktel.net")
 
 payload = ""
 
