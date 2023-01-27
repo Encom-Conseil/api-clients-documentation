@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Cyrille Georgel < cyrille.georgel@encom-conseil.fr >" /><link rel="canonical" href="https://encom-conseil.github.io/smart-routings-v1/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Routages intelligents V1 : routages - API Clients Encom</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Routages intelligents V1 : routages";
+        var mkdocs_page_input_path = "smart-routings-v1.md";
+        var mkdocs_page_url = "/smart-routings-v1/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> API Clients Encom
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API ROUTAGES</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents (legacy)</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Routages intelligents V1 : routages</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#determiner-la-ou-les-files-dappels-de-destinations-en-fonction-du-numero-de-lappelant">Déterminer la (ou les) file(s) d'appels de destinations en fonction du numéro de l'appelant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres">Paramètres</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-de-requete">Exemples de requête</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#curl">Curl</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API SMS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-messages-unitaires/">Messages unitaires</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-messages-listes/">Messages vers une liste de diffusion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-listes-de-diffusion/">Gestion des listes de diffusion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-destinataires/">Gestion des destinataires</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-listener/">Configuration de listener</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">API Clients Encom</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>API ROUTAGES &raquo;</li>
+      <li>Routages intelligents V1 : routages</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="routages-intelligents-v1">Routages intelligents (V1)</h2>
+<hr />
+<p>Il est possible d'interroger l'Api Clients Encom, soit par rapport au numéro de l'appelant, soit par rapport à un code que celui-ci est invité à saisir.</p>
+<p>En principe, votre call flow tentera d'abord de reconnaître l'appelant par son numéro, et ne l'invitera à saisir son code d'identification que s'il n'est pas déjà reconnu.</p>
+<p>Une fois l'appelant identifié par l'une ou l'autre des méthodes, l'Api Clients Encom vous indiquera vers quelle file d'appels le diriger, mais aussi s'il est VIP et/ou sous contrat d'astreinte.</p>
+<p>Note importante : le paramètre "customerAccount", qui correspond au compte client Encom, doit être passé dans toutes les requêtes vers l'API Clients Encom. En effet, le jeton d'identification est personnel et son détenteur peut dans certains cas avoir accès à plusieurs comptes clients.</p>
+<h3 id="determiner-la-ou-les-files-dappels-de-destinations-en-fonction-du-numero-de-lappelant">Déterminer la (ou les) file(s) d'appels de destinations en fonction du numéro de l'appelant</h3>
+<p><strong>*GET /api/v1/smartRoutings</strong></p>
+<h4 id="parametres">Paramètres</h4>
+<ul>
+<li>customerAccount : mandatory</li>
+<li>number : mandatory</li>
+<li>format : json ou raw (json si non précisé)</li>
+</ul>
+<h4 id="exemples-de-requete">Exemples de requête</h4>
+<h5 id="curl">Curl</h5>
+<pre><code>#### Exemples de requête
+
+##### Curl
+
+</code></pre>
+<p>curl --request GET \
+  --url 'https://clients.encom-conseil.fr/api/v1/smartRoutings?customerAccount=CL0000&amp;number=00331XXXXXXXX' \
+  --header 'authorization: Bearer {token} '</p>
+<pre><code>
+##### PHP
+
+</code></pre>
+<p>&lt;?php</p>
+<p>$curl = curl_init();</p>
+<p>curl_setopt_array($curl, [
+  CURLOPT_URL =&gt; "https://clients.encom-conseil.fr/api/v1/smartRoutings?customerAccount=CL0000&amp;number=00331XXXXXXXX",
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; "",
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 30,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; "GET",
+  CURLOPT_POSTFIELDS =&gt; "",
+  CURLOPT_HTTPHEADER =&gt; [
+    "Authorization: Bearer {token}"
+  ],
+]);</p>
+<p>$response = curl_exec($curl);
+$err = curl_error($curl);</p>
+<p>curl_close($curl);</p>
+<p>if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}</p>
+<pre><code>
+##### Python
+
+</code></pre>
+<p>import http.client</p>
+<p>conn = http.client.HTTPSConnection("clients.encom-conseil.fr")</p>
+<p>payload = ""</p>
+<p>headers = {
+    'Authorization': "Bearer {token}"
+    }</p>
+<p>conn.request("GET", "/api/v1/smartRoutings?customerAccount=CL0000&amp;number=0033XXXXXXXXX", payload, headers)</p>
+<p>res = conn.getresponse()
+data = res.read()</p>
+<p>print(data.decode("utf-8"))</p>
+<pre><code>
+#### Réponse
+
+L'Api retourne une réponse '400 bad request' si la requête est mal-formulée.
+
+L'Api retourne une réponse '403 not authorized' si l'utilisateur n'a pas les droits suffisants sur le compte client.
+
+Si une des quatre destinations possibles est explicitement précisée dans la requête, seule celle-ci est retournée : 
+
+</code></pre>
+<p>{
+  "destination1": "207"
+}</p>
+<pre><code>Si aucune destination n'est précisée, les 4 valeurs sont retournées :
+
+</code></pre>
+<p>{
+  "destination1": "207",
+  "destination2": "209",
+  "destination3": "214",
+  "destination4": "216"
+}</p>
+<pre><code>
+Il est possible de recevoir les valeurs dans un format brut, séparées par des virgules, en ajoutant le couple paramètre/valeur &quot;format/raw&quot; dans la requête :
+
+</code></pre>
+<p>207,209,214,216
+```</p>
+              
+            </div>
+          </div>
+<footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="../encom-api-sms/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+        
+        
+        <a href="../smart-routings-v0/" class="btn btn-neutral" title="Routages intelligents (legacy)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        
+    </div>
+    
+
+    <hr/>
+
+    <div role="contentinfo">
+        <!-- Copyright etc -->
+        
+    </div>
+
+    Built with Passion at <a href="https://encom-conseil.fr?utm_source=api-clients-documentation" target="_blank">Encom</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../smart-routings-v0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../encom-api-sms/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

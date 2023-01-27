@@ -1,68 +1,63 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="author" content="Cyrille Georgel < cyrille.georgel@encom-conseil.fr >">
-  <link rel="canonical" href="https://encom-conseil.github.io/sms-messages-listes/">
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Messages vers une liste de diffusion - API Clients Encom</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Messages vers une liste de diffusion";
-    var mkdocs_page_input_path = "sms-messages-listes.md";
-    var mkdocs_page_url = "/sms-messages-listes/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Cyrille Georgel < cyrille.georgel@encom-conseil.fr >" /><link rel="canonical" href="https://encom-conseil.github.io/sms-messages-listes/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Messages vers une liste de diffusion - API Clients Encom</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Messages vers une liste de diffusion";
+        var mkdocs_page_input_path = "sms-messages-listes.md";
+        var mkdocs_page_url = "/sms-messages-listes/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> API Clients Encom</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> API Clients Encom
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Routages</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API SMS</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sms-messages-unitaires/">Messages unitaires</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Messages vers une liste de diffusion</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API ROUTAGES</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v0/">Routages intelligents (legacy)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../smart-routings-v1/">Routages intelligents V1 : routages</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API SMS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../encom-api-sms/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-messages-unitaires/">Messages unitaires</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Messages vers une liste de diffusion</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#envoyer-un-message-vers-une-liste-de-diffusion">Envoyer un message vers une liste de diffusion</a>
         <ul>
@@ -89,49 +84,37 @@
         </ul>
     </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sms-listes-de-diffusion/">Gestion des listes de diffusion</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sms-destinataires/">Gestion des destinataires</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sms-listener/">Configuration de listener</a>
-                    </li>
-                </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-listes-de-diffusion/">Gestion des listes de diffusion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-destinataires/">Gestion des destinataires</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sms-listener/">Configuration de listener</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">API Clients Encom</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">API Clients Encom</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>API SMS &raquo;</li>
-        
-      
-    
-    <li>Messages vers une liste de diffusion</li>
+      <li>Messages vers une liste de diffusion</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h2 id="messages-vers-une-liste-de-diffusion">Messages vers une liste de diffusion</h2>
 <hr />
@@ -154,7 +137,7 @@
 <h4 id="exemples-de-requete">Exemples de requête</h4>
 <h5 id="curl">Curl</h5>
 <pre><code>curl --request POST \
-  --url 'https://telecom0525-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&amp;message=Hello%20World!&amp;type=t&amp;smsRecipientListId=1' \
+  --url 'https://telecom0585-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&amp;message=Hello%20World!&amp;type=t&amp;smsRecipientListId=1' \
   --header 'authorization: Bearer {token} '
 </code></pre>
 <h5 id="php">PHP</h5>
@@ -163,7 +146,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL =&gt; &quot;https://telecom0525-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&amp;message=Hello%20World!&amp;type=t&amp;smsRecipientListId=1&quot;,
+  CURLOPT_URL =&gt; &quot;https://telecom0585-clients.bluerocktel.net/api/v1/sms/groupedMessage?customerAccount=CL3578&amp;message=Hello%20World!&amp;type=t&amp;smsRecipientListId=1&quot;,
   CURLOPT_RETURNTRANSFER =&gt; true,
   CURLOPT_ENCODING =&gt; &quot;&quot;,
   CURLOPT_MAXREDIRS =&gt; 10,
@@ -190,7 +173,7 @@ if ($err) {
 <h5 id="python">Python</h5>
 <pre><code>import http.client
 
-conn = http.client.HTTPSConnection(&quot;telecom0525-clients.bluerocktel.net&quot;)
+conn = http.client.HTTPSConnection(&quot;telecom0585-clients.bluerocktel.net&quot;)
 
 payload = &quot;&quot;
 
@@ -213,7 +196,6 @@ print(data.decode(&quot;utf-8&quot;))
               
             </div>
           </div>
-          
 <footer>
     
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
@@ -235,7 +217,7 @@ print(data.decode(&quot;utf-8&quot;))
 
     Built with Passion at <a href="https://encom-conseil.fr?utm_source=api-clients-documentation" target="_blank">Encom</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -243,18 +225,19 @@ print(data.decode(&quot;utf-8&quot;))
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../sms-messages-unitaires/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../sms-listes-de-diffusion/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../sms-messages-unitaires/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../sms-listes-de-diffusion/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
